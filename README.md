@@ -75,6 +75,10 @@ func TestMain(t *testing.T) {
 }
 ```
 
+```shell
+go test ./...
+```
+
 output in case of failure
 ```log
 2020/10/25 21:42:08 "GET http://127.0.0.1:49437/get HTTP/1.1" from 127.0.0.1:49438 - 200 32B in 103.935µs
@@ -92,18 +96,18 @@ output in case of failure
 req.json
 ```json
 {
-  "method": HTTP method,
-  "path": Your api endpoint,
-  "data": Request body
+  "method": "HTTP method",
+  "path": "Your api endpoint",
+  "data": "Request body"
 }
 ```
 
 res.json
 ```json
 {
-  "message": Expected message,
-  "statusCode": Expected status code,
-  "data": Your api response
+  "message": "Expected message",
+  "statusCode": "Expected status code",
+  "data": "Your api response"
 }
 ```
 
