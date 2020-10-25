@@ -1,0 +1,7 @@
+{
+  "message": "",
+  "statusCode": 400,
+  "data": {
+    "error": "invalid argument"
+  }
+}

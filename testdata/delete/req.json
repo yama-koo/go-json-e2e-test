@@ -1,0 +1,5 @@
+{
+  "method": "DELETE",
+  "path": "/delete/5",
+  "data": null
+}

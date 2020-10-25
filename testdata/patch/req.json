@@ -1,0 +1,7 @@
+{
+  "method": "PATCH",
+  "path": "/patch/4",
+  "data": {
+    "key": "The patch process was successful!"
+  }
+}

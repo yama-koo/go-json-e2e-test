@@ -1,0 +1,7 @@
+{
+  "method": "POST",
+  "path": "/post/100",
+  "data": {
+    "key": "The e2e test is a lot of fun!"
+  }
+}

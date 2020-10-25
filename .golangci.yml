@@ -1,0 +1,42 @@
+run:
+  tests: false
+
+linters-settings:
+  golint:
+    min-confidence: 0.8
+  misspell:
+    locale: US
+  lll:
+    line-length: 120
+
+linters:
+  disable-all: true
+  enable:
+    - asciicheck
+    - bodyclose
+    - depguard
+    - deadcode
+    - errcheck
+    - gosec
+    - goconst
+    - govet
+    - golint
+    - gofmt
+    - goimports
+    - gosimple
+    - ineffassign
+    - lll
+    - maligned
+    - misspell
+    - prealloc
+    - rowserrcheck
+    # - scopelint
+    - staticcheck
+    - stylecheck
+    - structcheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - varcheck
+    - whitespace

@@ -1,0 +1,7 @@
+{
+  "method": "PUT",
+  "path": "/put/3",
+  "data": {
+    "key": "Putting is a success!"
+  }
+}
