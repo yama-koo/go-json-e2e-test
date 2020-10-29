@@ -67,7 +67,7 @@ func TestMain(t *testing.T) {
 
     w.Header().Add("Content-Type", "application/json")
     w.WriteHeader(http.StatusOK)
-    json.Marshal(res)
+    byte, _ := json.Marshal(res)
     _, _ = w.Write(byte)
   })
 
