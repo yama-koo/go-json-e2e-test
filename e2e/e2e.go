@@ -1,3 +1,6 @@
+/*
+A simple library for server-level e2e testing in json
+*/
 package e2e
 
 import (
@@ -15,12 +18,14 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
+// Request is the format of the `req.json`
 type Request struct {
 	Method string      `json:"method"`
 	Path   string      `json:"path"`
 	Data   interface{} `json:"data"`
 }
 
+// Response is the format of the `req.json`
 type Response struct {
 	Message    string      `json:"message"`
 	StatusCode int         `json:"statusCode"`
@@ -52,6 +57,8 @@ func walkMatch(root string) ([]string, error) {
 	return matches, nil
 }
 
+// E2E searches recursively for req*.json in the folder you specify by path.
+// Make a request to api using the found json and compare the response to the res*.json of the same name.
 func E2E(t *testing.T, handler http.Handler, path string, ignoreFields []string) {
 	igf = ignoreFields
 
