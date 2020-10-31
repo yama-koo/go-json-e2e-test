@@ -1,14 +1,20 @@
 # go-json-e2e-test
 A simple library for server-level e2e testing in json
 
-## install
+## Install
 
 ```
 go get github.com/yama-koo/go-json-e2e-test
 ```
 
-## usage
+## Usage
 
+### E2E(t *testing.T, handler http.Handler, path string, ignoreFields []string)
+Recursively searches for `req*.json` in the folder specified by `path`. Make a request to api using the found json and compare the response to the `res*.json` of the same name.
+
+## Example
+
+directory example
 ```
 .
 ├── go.mod
@@ -91,7 +97,7 @@ output in case of failure
           }
 ```
 
-## json format
+## Json format
 
 req.json
 ```json
@@ -113,7 +119,7 @@ res.json
 
 more [example](./e2e/testdata)
 
-## supported methods
+## Supported methods
 
 ||
 |-|
@@ -122,3 +128,24 @@ more [example](./e2e/testdata)
 |PUT|
 |PATCH|
 |DELETE|
+
+## Tips
+If you want to control the order of execution, you can use a numeric prefix.
+
+```
+.
+├── go.mod
+├── go.sum
+├── main_test.go
+├── testdata1
+│   └── get
+│       ├── req.json
+│       └── res.json
+└── testdata2
+    ├── 10_post
+    │   ├── req.json
+    │   └── res.json
+    └── 20_post
+        ├── req.json
+        └── res.json
+```
