@@ -228,7 +228,7 @@ func convertToResponse(res *http.Response) (*Response, error) {
 	}
 	if len(resByte) == 0 {
 		actual.Data = nil
-	} else if resByte[0] == '{' {
+	} else if resByte[0] == '{' || resByte[0] == '[' {
 		var body interface{}
 		err = json.Unmarshal(resByte, &body)
 		if err != nil {
